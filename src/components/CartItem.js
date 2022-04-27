@@ -9,7 +9,7 @@ function CartItem() {
         </div>
         <div className="CartItem-info">
             <div className="info-title">
-                <h2>Apple Ipad Pro</h2>
+                <h2>Apple IPad Pro</h2>
                 <div className="info-stock">In Stock</div> 
                 <div className="item-actions">
                     <div className="item-quantity">
