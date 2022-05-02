@@ -4,7 +4,6 @@ import CartItem from './CartItem'
 
 function CartItems({ items }) {
 
-  console.log(items);
 
   return (
     <div className="CartItems">
@@ -13,13 +12,9 @@ function CartItems({ items }) {
         <div className="CartItems-items">
           {items.map((item ,index) => 
             <CartItem
-              //  title={item.title}
-              //  stock={item.stock} 
-              //  quantity={item.quantity}
                 price={item.price}
-              //  images={item.image}
-               item={item}
-              key={index} 
+                item={item}
+                key={index} 
               />
           )}
         </div>

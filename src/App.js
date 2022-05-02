@@ -8,14 +8,14 @@ import data from './Data';
 function App() {
 
   const [cartItems, setCartItems] = useState(data);
-  
+  const [cartTotal, setCartTotal] = useState(data);
 
   return (
     <div className="App">
         <Header title="Amazon Cart"/>
         <div className="App-main">
           <CartItems items={cartItems} /> 
-          <CartTotal />
+          <CartTotal items={cartItems} />
         </div>
     </div>
   )
