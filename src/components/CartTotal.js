@@ -12,7 +12,7 @@ function CartTotal( { items } ) {
       let total = 0; 
       items.forEach((item)=>{
         total += (item.price * item.quantity)
-        // todo: round the total price up.
+        console.log(items);
       })
 
     console.log("Total Price" );
@@ -21,11 +21,13 @@ function CartTotal( { items } ) {
       // getting the correct total quantity of items in cart.
 
   const getTotalQuanity = () => {
-    let total = 0; // initailized quantity total to zero
+  //  const totalItems = items.reduce((inCart,item) => inCart+ item.quantity,0);
+   let totalItems = 0; // initailized quantity total to zero
     items.forEach((item) => { // loops through each item in cart and gets Qty
-      total += item.quantity
-    })
-    return total; // returns the total 
+      totalItems += Number(item.quantity)
+    }) 
+    console.log(totalItems);
+    return totalItems; // returns the total 
   }   
   return (
     <div className="CartTotal">
