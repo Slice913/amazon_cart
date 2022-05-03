@@ -2,8 +2,21 @@ import React from 'react'
 import "./CartItems.css"
 import CartItem from './CartItem'
 
-function CartItems({ items }) {
+function CartItems({ items, setCartItems }) {
 
+  const changeItemQuantity = (e, index) => {
+    //  when we change a quantity on item, we pass it in here
+    // pass in the index
+    // using the index we need to change the quantity to the selected one from option
+    // update the items state for re-render
+    console.log(e.target.value);
+    console.log('Index is', index);
+    //! DO NOT DATE THE STATE WITHOUT SETTER FUNCTION
+    const newItems = [...items]
+    newItems[index].quantity = e.target.value;
+    setCartItems(newItems);
+
+  }
 
   return (
     <div className="CartItems">
@@ -12,9 +25,10 @@ function CartItems({ items }) {
         <div className="CartItems-items">
           {items.map((item ,index) => 
             <CartItem
-                price={item.price}
-                item={item}
-                key={index} 
+              index={index}
+              item={item}
+              key={index}
+              changeItemQuantity={changeItemQuantity}
               />
           )}
         </div>
