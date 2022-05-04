@@ -9,13 +9,21 @@ function CartItems({ items, setCartItems }) {
     // pass in the index
     // using the index we need to change the quantity to the selected one from option
     // update the items state for re-render
-    console.log(e.target.value);
-    console.log('Index is', index);
     //! DO NOT DATE THE STATE WITHOUT SETTER FUNCTION
     const newItems = [...items]
     newItems[index].quantity = e.target.value;
     setCartItems(newItems);
+    console.log(items);
 
+  }
+
+  const deleteItem = ( indexToDelete ) =>{
+    // filter out the items where the item index does not equak to the selected item index    
+    const newItems = items.filter((value, index)=>{
+      return index !== indexToDelete
+    })
+      console.log(items);
+      setCartItems(newItems);
   }
 
   return (
@@ -29,6 +37,7 @@ function CartItems({ items, setCartItems }) {
               item={item}
               key={index}
               changeItemQuantity={changeItemQuantity}
+              deleteItem={deleteItem}
               />
           )}
         </div>
